@@ -5,16 +5,16 @@ class Xtreme10G < Oxidized::Model
   # For Xtreme 10G switches
   #
   # Tested with Connecttech XDG201
-  
+
   comment '! '
   prompt /[a-zA-Z\-]+[#] /
 
   cmd :all do |cfg|
-    cfg.gsub! /\r/, ''
+    cfg.gsub! "\r", ''
   end
 
   cmd 'show version' do |cfg|
-    comment cfg 
+    comment cfg
   end
 
   cmd 'show running-config' do |cfg|
